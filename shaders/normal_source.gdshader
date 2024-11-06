@@ -8,7 +8,7 @@ shader_type canvas_item;
 void fragment() {
 	vec2 pos = uv_to_pos(UV);
 	float h = height_at(pos);
-	float delta = 0.1;
+	float delta = 0.5;
 	vec3 normal = normalize(cross(
 		vec3(-delta, h - height_at(pos + vec2(-delta, 0)), 0),
 		vec3(0, h - height_at(pos + vec2(0, -delta)), -delta)

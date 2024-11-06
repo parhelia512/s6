@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://fn2ddksgfbtm"]
+[gd_scene load_steps=21 format=4 uid="uid://fn2ddksgfbtm"]
 
 [ext_resource type="PackedScene" uid="uid://ckh5xy7d14ubd" path="res://scenes/player.tscn" id="1_hadwj"]
 [ext_resource type="PackedScene" uid="uid://w66dky36q7nm" path="res://scenes/height_mesh.tscn" id="3_f64ys"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://ch6ynq5e3k6pm" path="res://assets/para/vegetation_grass_card_03.png" id="7_kjetl"]
 [ext_resource type="Script" path="res://scripts/wrappinggrass.gd" id="7_u0gdf"]
 [ext_resource type="PackedScene" uid="uid://ktlm8ftijwrn" path="res://scenes/blueprint.tscn" id="8_vb857"]
-[ext_resource type="PackedScene" uid="uid://bpflwbrbt5muo" path="res://scenes/treegen.tscn" id="10_lk88l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wvqfo"]
 sky_top_color = Color(0.313726, 0.462745, 1, 1)
@@ -23,6 +22,12 @@ sky = SubResource("Sky_6300r")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.1
+fog_density = 0.001
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_gckbc"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 700.0
+dof_blur_far_transition = 500.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3v1k"]
 transparency = 2
@@ -36,14 +41,15 @@ albedo_texture = ExtResource("6_bn4dn")
 [sub_resource type="ArrayMesh" id="ArrayMesh_26m4x"]
 _surfaces = [{
 "aabb": AABB(-1, 0, 0, 2.00001, 1, 1e-05),
-"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"format": 4119,
+"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
 "index_count": 12,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0, 3, 0, 1, 0, 2, 0, 2, 0, 1, 0, 0, 0),
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAIAAgABAAAA"),
 "material": SubResource("StandardMaterial3D_j3v1k"),
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191)
+"vertex_data": PackedByteArray("AACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAPwAAgD8AAAAAAACAvwAAgD8AAAAA/3///////7//f///////v/9///////+//3///////78=")
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52oev"]
@@ -58,14 +64,15 @@ albedo_texture = ExtResource("7_kjetl")
 [sub_resource type="ArrayMesh" id="ArrayMesh_lqd8p"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, 0, 1.00001, 0.5, 1e-05),
-"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"format": 4119,
+"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
 "index_count": 12,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0, 3, 0, 1, 0, 2, 0, 2, 0, 1, 0, 0, 0),
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAIAAgABAAAA"),
 "material": SubResource("StandardMaterial3D_52oev"),
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191)
+"vertex_data": PackedByteArray("AAAAPwAAAAAAAAAAAAAAvwAAAAAAAAAAAAAAPwAAAD8AAAAAAAAAvwAAAD8AAAAA/3///////7//f///////v/9///////+//3///////78=")
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5812"]
@@ -74,12 +81,13 @@ _surfaces = [{
 material = SubResource("StandardMaterial3D_l5812")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o0m4k"]
-viewport_path = NodePath("Blueprint/GrassView")
+viewport_path = NodePath("GrassView")
 
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ok65l")
+camera_attributes = SubResource("CameraAttributesPractical_gckbc")
 
 [node name="Counters" type="VBoxContainer" parent="."]
 offset_right = 40.0
@@ -115,6 +123,7 @@ source = NodePath("../Blueprint")
 mesh = SubResource("ArrayMesh_lqd8p")
 chunk_size = 256
 chunk_distance = 0
+particles_per_meter = 4.0
 reduce_radius = 32.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -131,9 +140,6 @@ visible = false
 offset_right = 889.0
 offset_bottom = 554.0
 texture = SubResource("ViewportTexture_o0m4k")
-
-[node name="Tree" parent="." instance=ExtResource("10_lk88l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 
 [connection signal="viewpoint_changed" from="Player" to="HeightMesh" method="update_viewpoint"]
 [connection signal="viewpoint_changed" from="Player" to="HeightCollisions" method="update_viewpoint"]

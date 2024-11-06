@@ -22,7 +22,11 @@ float shore_factor(vec2 pos) {
 	return calc_shore(startdist.x) * calc_shore(startdist.y) * calc_shore(enddist.x) * calc_shore(enddist.y);
 }
 
-
+float fbm(int seed, vec2 pos) {
+	fnl_state noise = fnlCreateState(seed);
+	noise.octaves = 8;
+	return fnlGetNoise2D(noise, pos.x, pos.y);
+}
 
 float height_at(vec2 pos) {
 
@@ -45,14 +49,25 @@ float height_at(vec2 pos) {
 	vec2 domain = pos * 0.2;
 	float domain_weight = 20.0;
 	vec2 direct = pos * 0.17;
-	float n2 = fnlGetNoise2D(
-		noise,
-		direct.x + domain_weight * fnlGetNoise2D(x_noise, domain.x, domain.y),
-		direct.y + domain_weight * fnlGetNoise2D(y_noise, domain.x, domain.y)
-	) +0.2;
+
+	vec2 q = vec2(
+		fbm(33, domain),
+		fbm(152, domain)
+	);
+	vec2 r = vec2(
+		fbm(827, domain + 10.0*q),
+		fbm(712, domain + 10.0*q)
+	);
+	float n2 = fbm(331, direct + 20.0*r) + 0.2;
+// 	float n2 = fnlGetNoise2D(
+// 		noise,
+// 		direct.x + domain_weight * fnlGetNoise2D(x_noise, domain.x, domain.y),
+// 		direct.y + domain_weight * fnlGetNoise2D(y_noise, domain.x, domain.y)
+// 	) +0.2;
 // 	float h2 = (pow5(n2) + 0.1) * 50.0;
 // 	float h2 = (pow5(n2+0.0)+ n2/3.0 + 0.10) * 100.0;
-	float h2 = (n2*n2*n2 +0.1 + n2*0.2) * 50.0;
+	float h2 = (n2*n2*n2*0.5 +0.1 + n2*0.4) * 50.0;
+// 	float h2 = n2 * 50.0;
 	float shore = shore_factor(pos);
 	return mix(base_height, h2, shore);
 }

@@ -56,7 +56,7 @@ void start() {
 	float distsq = diffsq.x + diffsq.y;
 
 	if (distsq > reduce_radius_sq ) {
-		density = min(density, 0.4);
+		density = min(density, 0.1);
 	}
 	ACTIVE = density > rand_from_seed(hash(ind * 103u + 13u));
 

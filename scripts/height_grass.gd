@@ -69,5 +69,3 @@ func update_viewpoint(pos3):
 func _input(event):
 	if event.is_action_pressed("toggle_grass"):
 		visible = not visible
-
-

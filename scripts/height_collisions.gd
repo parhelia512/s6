@@ -64,4 +64,3 @@ func update_viewpoint(pos3):
 				_to_load.append(v)
 	_to_load.sort_custom(func(a, b): return snapped_viewpoint.distance_squared_to(a) > snapped_viewpoint.distance_squared_to(b))
 	
-

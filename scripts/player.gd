@@ -44,4 +44,3 @@ func _input(event):
 		# $Head.rotation.z = clamp($Head.rotation.z, -PI/2, PI/2)
 		# print($Head.rotation)
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-

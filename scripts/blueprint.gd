@@ -105,6 +105,3 @@ func get_height(p):
 		+ __heightmap_get(xy + Vector2(0, 1)) * (1-uv.x) * (uv.y) \
 		+ __heightmap_get(xy + Vector2(1, 1)) * (uv.x) * (uv.y)
 	return ch
-
-
-
