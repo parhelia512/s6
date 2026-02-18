@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://w66dky36q7nm"]
 
-[ext_resource type="Script" path="res://scripts/height_mesh.gd" id="1_md27k"]
+[ext_resource type="Script" uid="uid://bl25tfysljbhi" path="res://scripts/height_mesh.gd" id="1_md27k"]
 [ext_resource type="CompressedTexture2DArray" uid="uid://xah3671yr5gg" path="res://assets/ground_textures.png" id="6_m5yow"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtdkt"]

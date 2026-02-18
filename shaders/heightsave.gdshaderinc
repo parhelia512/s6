@@ -73,5 +73,3 @@ vec3 normal_at(vec2 position) {
 // 	return
 	return normalize(texture(normal_input, uv_at(position)).xyz * 2.0 - 1.0);
 }
-
-

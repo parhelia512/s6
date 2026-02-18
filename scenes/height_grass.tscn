@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qvsylhhgvhsx"]
 
-[ext_resource type="Script" path="res://scripts/height_grass.gd" id="1_advu8"]
+[ext_resource type="Script" uid="uid://b7y6fxgwy5v7b" path="res://scripts/height_grass.gd" id="1_advu8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3pfx"]
 albedo_color = Color(0, 1, 0, 1)

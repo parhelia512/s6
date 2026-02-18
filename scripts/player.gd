@@ -16,7 +16,7 @@ signal viewpoint_changed(pos: Vector3)
 func _physics_process(delta):
 	var input_movement = Input.get_vector("left", "right", "forwards", "backwards")
 	var s = speed if not Input.is_action_pressed("sprint") else sprint_speed
-	var movement = (Vector3(input_movement.y, 0, -input_movement.x) * s).rotated(Vector3(0, 1, 0), self.rotation.y)
+	var movement = (Vector3(input_movement.x, 0, input_movement.y) * s).rotated(Vector3(0, 1, 0), self.rotation.y)
 	if gravity_enabled:
 		movement.y = velocity.y - gravity*delta
 		if Input.is_action_pressed("up") and is_on_floor():

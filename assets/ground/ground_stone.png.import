@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/ground_stone.png-184da3cb45fd08c7184054ec7a14
 [params]
 
 compress/mode=1
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

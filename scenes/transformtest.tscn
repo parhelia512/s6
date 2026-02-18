@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjl1dgvish75t"]
 
-[ext_resource type="Shader" path="res://shaders/rotationtest.gdshader" id="1_f4kpj"]
+[ext_resource type="Shader" uid="uid://btm3muqukqjq5" path="res://shaders/rotationtest.gdshader" id="1_f4kpj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f7881"]
 render_priority = 0

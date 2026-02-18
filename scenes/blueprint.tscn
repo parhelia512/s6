@@ -1,34 +1,24 @@
 [gd_scene load_steps=10 format=3 uid="uid://ktlm8ftijwrn"]
 
-[ext_resource type="Script" path="res://scripts/blueprint.gd" id="1_ngrhy"]
-[ext_resource type="Shader" path="res://shaders/height_source.gdshader" id="2_bpya4"]
-[ext_resource type="Shader" path="res://shaders/normal_source.gdshader" id="3_b4khk"]
-[ext_resource type="Shader" path="res://shaders/grassdensity.gdshader" id="4_iwdjr"]
-[ext_resource type="Shader" path="res://shaders/current_texture_source.gdshader" id="5_ak5wi"]
+[ext_resource type="Script" uid="uid://cxkc244nqr6yx" path="res://scripts/blueprint.gd" id="1_ngrhy"]
+[ext_resource type="Shader" uid="uid://c2dljom4k6nh0" path="res://shaders/height_source.gdshader" id="2_bpya4"]
+[ext_resource type="Shader" uid="uid://5wo6wji0l6q2" path="res://shaders/normal_source.gdshader" id="3_b4khk"]
+[ext_resource type="Shader" uid="uid://c8s3j4mbc5qr7" path="res://shaders/grassdensity.gdshader" id="4_iwdjr"]
+[ext_resource type="Shader" uid="uid://ds7mjdcl1fnwb" path="res://shaders/current_texture_source.gdshader" id="5_ak5wi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxc4f"]
 shader = ExtResource("2_bpya4")
-shader_parameter/area_min = Vector3(0, -256, 0)
-shader_parameter/area_size = Vector3(1024, 1024, 1024)
-shader_parameter/shore_offset = 512.0
-shader_parameter/base_height = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_juoyq"]
 shader = ExtResource("3_b4khk")
-shader_parameter/area_min = Vector3(-2048, -256, -2048)
-shader_parameter/area_size = Vector3(512, 1024, 1024)
-shader_parameter/shore_offset = null
-shader_parameter/base_height = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5d2e0"]
 shader = ExtResource("4_iwdjr")
-shader_parameter/area_min = null
-shader_parameter/area_size = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oy0dv"]
 shader = ExtResource("5_ak5wi")
-shader_parameter/area_min = null
-shader_parameter/area_size = null
+shader_parameter/area_min = Vector3(0, 0, 0)
+shader_parameter/area_size = Vector3(0, 0, 0)
 
 [node name="Blueprint" type="Node"]
 script = ExtResource("1_ngrhy")
